@@ -1,0 +1,30 @@
+PROGRAM CASHIER
+
+STORE "listTotal" with List
+
+READ AND WRITE "namaBarang" with String
+READ AND WRITE "hargaBarang" with Number
+READ AND WRITE "jumlahBarang" with Number
+
+STORE "totalHarga" with CALCULATE "hargaBarang" multiply by "jumlahBarang"
+ADD "totalHarga" into "listTotal"
+
+PRINT ("Beli lagi pilih 1, selesai pilih 2")
+READ AND WRITE "beliLagi" with Number
+
+WHILE "belilagi" != 2 :
+
+    READ AND WRITE "namaBarang" with String
+    READ AND WRITE "hargaBarang" with Number
+    READ AND WRITE "jumlahBarang" with Number
+
+    STORE "totalHarga" with CALCULATE "hargaBarang" multiply by "jumlahBarang"
+    ADD "totalHarga" into "listTotal"
+
+
+READ AND WRITE "bayar" with Number
+STORE "kembali" with CALCULATE "bayar" minus by "SUM(listTotal)"
+
+PRINT (SUM(listTotal))
+PRINT (bayar)
+PRINT (kembali)
